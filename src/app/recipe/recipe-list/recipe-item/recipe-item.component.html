@@ -1,1 +1,23 @@
-<p>recipe-item works!</p>
+<div class="container">
+    <a href="#" class="list-group-item clearfix card-body"
+     (click)="onSelected()"
+    >
+        <div class="container  ">
+            <h4 class="list-group-item-heading mt-4 "> {{recipe.name}}</h4>
+            <p class="list-group-item-text"> {{recipe.desc}} </p>
+        </div>
+                <span class="float-end">
+                    <img 
+                    
+                     [src]="recipe.imgPath" 
+                     alt="{{recipe.name}}" 
+                     class=""
+                     style="max-height: 65px;  margin-top: -100px;" >
+                </span>
+
+            
+       
+       
+        
+    </a>
+</div>

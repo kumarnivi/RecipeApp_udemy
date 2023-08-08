@@ -24,7 +24,7 @@ import { ShoppingEditComponent } from './shopping/shopping-edit/shopping-edit.co
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
