@@ -1,18 +1,23 @@
 import { Component, OnInit } from '@angular/core';
-import { Incrediant } from '../shared/incrediant.model';
+import { Ingrediant } from '../shared/ingrediant.model';
 @Component({
   selector: 'app-shopping-list',
   templateUrl: './shopping-list.component.html',
   styleUrls: ['./shopping-list.component.css']
 })
 export class ShoppingListComponent implements OnInit {
- incredients: Incrediant[]  = [
-  new Incrediant('apple',5),
-  new Incrediant('orange',10)
+ ingrediants: Ingrediant[]  = [
+  new Ingrediant('apple',5),
+  new Ingrediant('orange',10)
  ];
 
   
 ngOnInit() {
 
 }
+onIngrediantAdded( ingrediant: Ingrediant){
+   this.ingrediants.push(ingrediant)
+ 
+}
+
 }

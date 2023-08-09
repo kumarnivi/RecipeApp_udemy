@@ -1,7 +1,6 @@
 // Import necessary dependencies
 import { Component, Input, OnInit,EventEmitter,Output } from '@angular/core';
 import { Recipe } from '../../recipe.model'; // Adjust the path as needed
-import { ThisReceiver } from '@angular/compiler';
 
 @Component({
   selector: 'app-recipe-item',
@@ -9,10 +8,10 @@ import { ThisReceiver } from '@angular/compiler';
   styleUrls: ['./recipe-item.component.css']
 })
 export class RecipeItemComponent implements OnInit {
-  @Input() recipe: Recipe;
- @Output() recipeSelected = new EventEmitter<void>()
+  @Input() recipe!: Recipe;
+ @Output() recipeSelected = new EventEmitter();
   constructor() {
-    this.recipe = new Recipe('name','dics','imgPath');
+  
   }
   ngOnInit() {
 

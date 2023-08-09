@@ -6,10 +6,10 @@ import { Recipe } from './recipe.model';
   styleUrls: ['./recipe.component.css']
 })
 export class RecipeComponent {
-  selectedRecipe: Recipe ;
+  selectedRecipe!: Recipe;
 
  constructor () {
- this.selectedRecipe = new Recipe('name', 'desc', 'imgPath')
+
  }
  ngOnInit() {
   
