@@ -15,6 +15,12 @@ constructor(private slService: ShoppingListService) {
 } 
 ngOnInit() {
  this.ingrediants = this.slService.getIngredients();
+ this.slService.ingrediantChanged
+ .subscribe(
+  (ingrediants: Ingrediant[]) => {
+    this.ingrediants = ingrediants;
+  }
+ )
 }
 
 
