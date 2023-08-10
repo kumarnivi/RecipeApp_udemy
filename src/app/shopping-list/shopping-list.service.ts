@@ -13,4 +13,11 @@ private    ingrediants: Ingrediant[]  = [
             this.ingrediants.push(ingrediant);
             this.ingrediantChanged.emit(this.ingrediants.slice())
         }
+        addIngredients(ingrediants: Ingrediant[]){
+            // for(let ingrediant of ingrediants) {
+            //  this.addIngredient(ingrediant)
+            // }
+            this.ingrediants.push(...ingrediants);
+            this.ingrediantChanged.emit(this.ingrediants.slice())
+               }
 }
