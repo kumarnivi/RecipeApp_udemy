@@ -8,16 +8,16 @@ export class RecipeService {
   recipeSelected = new EventEmitter<Recipe>();
 
   private  recipes:Recipe[] = [
-        new Recipe('A Test Recipe', 
+        new Recipe('Burgger one', 
         'This is simply and teast',
-        'https://upload.wikimedia.org/wikipedia/commons/1/15/Recipe_logo.jpeg',
+        'https://www.freepnglogos.com/uploads/burger-png/burger-png-tasty-made-3.png',
         [
           new Ingrediant('Meat', 1),
           new Ingrediant('bun', 2)
         ]),
-        new Recipe('A Test Recipe', 
+        new Recipe('Burgger Two', 
         'This is simply and teast',
-        'https://upload.wikimedia.org/wikipedia/commons/1/15/Recipe_logo.jpeg',
+        'https://www.freepnglogos.com/uploads/burger-png/burger-png-tasty-made-3.png',
         [
           new Ingrediant('Meat', 1),
           new Ingrediant('bun', 2)

@@ -8,8 +8,8 @@ import { ShoppingListService } from 'src/app/shopping-list/shopping-list.service
   styleUrls: ['./shopping-edit.component.css']
 })
 export class ShoppingEditComponent {
- @ViewChild('nameInput') nameInputRef!: ElementRef;
- @ViewChild('amountInput') amountInputRef!: ElementRef;
+ @ViewChild('nameInput',{ static:false}) nameInputRef!: ElementRef;
+ @ViewChild('amountInput', {static:false}) amountInputRef!: ElementRef;
 //  @Output() ingrediantAdded = new EventEmitter<Ingrediant>();
 //  ** we have to import increediant instead of passing object **//
 

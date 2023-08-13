@@ -7,13 +7,13 @@ import { ActivatedRoute,Params } from '@angular/router';
   styleUrls: ['./recipe-edit.component.css']
 })
 export class RecipeEditComponent implements OnInit {
-  id!: number;
- editMode: boolean = false
+  id?: number;
+ editMode = false
 
 constructor (private route:ActivatedRoute) {}
 
 
-ngOnInit() {
+ngOnInit():void {
   this.route.params
     .subscribe(
       (params: Params) => {

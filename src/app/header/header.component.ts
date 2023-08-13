@@ -6,7 +6,8 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
- @Output() featureSelected = new EventEmitter<string>();
+// @Output() featureSelected = new EventEmitter<string>();
 
  
 }
+

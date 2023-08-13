@@ -7,12 +7,11 @@ import { ShoppingListService } from './shopping-list.service';
   styleUrls: ['./shopping-list.component.css']
 })
 export class ShoppingListComponent implements OnInit {
- ingrediants: Ingrediant[]  = [];
+ ingrediants!: Ingrediant[] ;
 
   
-constructor(private slService: ShoppingListService) {
+constructor(private slService: ShoppingListService) {} 
 
-} 
 ngOnInit() {
  this.ingrediants = this.slService.getIngredients();
  this.slService.ingrediantChanged

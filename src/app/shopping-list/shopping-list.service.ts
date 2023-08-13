@@ -2,7 +2,7 @@ import { EventEmitter } from "@angular/core";
 import { Ingrediant } from "../shared/ingrediant.model";
 export class ShoppingListService {
     ingrediantChanged = new EventEmitter<Ingrediant[]>()
-private    ingrediants: Ingrediant[]  = [
+private  ingrediants: Ingrediant[]  = [
         new Ingrediant('apple',5),
         new Ingrediant('orange',10)
        ];
