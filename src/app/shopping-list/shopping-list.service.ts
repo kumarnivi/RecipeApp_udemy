@@ -3,6 +3,10 @@ import { Subject } from "rxjs";
 import { Ingrediant } from "../shared/ingrediant.model";
 export class ShoppingListService {
 // ingrediantChanged = new EventEmitter<Ingrediant[]>()
+
+// ** for edit shopping list **
+startedEditting = new Subject<number>();
+
 // **using Subject
 ingredientChanged = new Subject<Ingrediant[]>()
 private  ingrediants: Ingrediant[]  = [
