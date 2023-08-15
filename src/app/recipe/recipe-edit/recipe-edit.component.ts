@@ -1,5 +1,5 @@
 import { Component,OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormArray, FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute,Params } from '@angular/router';
 import { RecipeService } from '../recipe.service';
 
@@ -30,25 +30,51 @@ ngOnInit():void {
     );
 }
 
+// ** Submit the reactive Form Function ** 
+onSubmit(){
+  console.log(this.recipeForm)
+}
+
 // ** create reactive form for create new recipe **
 
 private initForm() {
 let recipeName = '';
 let recipeImgPath =  '';
 let recipeDesc = '';
+let recipeIngredients = new FormArray([]);
+
+
 
 if (this.editMode) {
   const recipe = this.recipeServide.getRecipe(this.id)
   recipeName = recipe.name;
   recipeImgPath = recipe.imgPath;
-  recipeDesc =recipe.desc
+  recipeDesc =recipe.desc;
+
+  // if(recipe['ingrediants']) {
+  //   for ( let ingrediant of recipe.ingrediants) {
+  //     recipeIngredients.push(
+  //       new FormGroup({
+  //         'name': new FormControl(ingrediant.name),
+  //         'amount': new FormControl(ingrediant.amount)
+  //       })
+  //     )
+  //   }
+  // }
+  
 }
 
  this.recipeForm = new FormGroup({
   'name': new FormControl(recipeName),
   'imgPath': new FormControl(recipeImgPath),
   'desc' : new FormControl(recipeDesc),
+  'ingrediants' : recipeIngredients
  })
+}
+
+
+get controls() { // a getter!
+  return (<FormArray>this.recipeForm.get('ingredients')).controls;
 }
 
 }
