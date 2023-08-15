@@ -9,7 +9,7 @@ import {
 } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Subscription, flatMap } from 'rxjs';
-import { Ingrediant } from 'src/app/shared/ingrediant.model';
+import { Ingredient } from 'src/app/shared/ingredient.model';
 import { ShoppingListService } from 'src/app/shopping-list/shopping-list.service';
 
 @Component({
@@ -29,14 +29,14 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
   subscription!: Subscription;
   editMode = false;
   editedItemIndex!: number;
-  editedItem!: Ingrediant
+  editedItem!: Ingredient
 
   constructor(private slService: ShoppingListService) {}
 
   ngOnInit(): void {
 
     // ** for edit shopping list items
-    this.subscription = this.slService.startedEditting
+    this.subscription = this.slService.startedEditing
     .subscribe(
       (index: number) => {
         this.editedItemIndex = index;
@@ -53,7 +53,7 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
 
   onSubmit(form: NgForm) {
     const value = form.value;
-    const newIngrediant = new Ingrediant(value.name, value.amount);
+    const newIngrediant = new Ingredient(value.name, value.amount);
     if(this.editMode){
       this.slService.updateIngredient(this.editedItemIndex, newIngrediant)
     } else {
@@ -63,20 +63,26 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
    form.reset()
   }
 
-  // ** for clean the data **
-  ngOnDestroy(): void {
-    this.subscription.unsubscribe();
-  }
 
-  // ** for clear moode **
-  onClear() {
-    this.slForm.reset();
-    this.editMode = false;
-  } 
+
+// ** for clear moode **
+onClear() {
+  this.slForm.reset();
+  this.editMode = false;
+} 
+
 
   // ** for Delete mode **
   onDelete() {
     this.slService.deleteIngredient(this.editedItemIndex);
     this.onClear()
   }
+
+  // ** for clean the data **
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
+
+  
+
 }

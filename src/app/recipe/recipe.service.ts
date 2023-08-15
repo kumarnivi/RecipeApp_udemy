@@ -1,6 +1,6 @@
 import { EventEmitter, Injectable } from "@angular/core";
 import { Recipe } from "./recipe.model";
-import { Ingrediant } from "../shared/ingrediant.model";
+import { Ingredient } from "../shared/ingredient.model";
 import { ShoppingListService } from "../shopping-list/shopping-list.service";
 
 @Injectable()
@@ -12,15 +12,15 @@ export class RecipeService {
         'This is simply and teast',
         'https://www.freepnglogos.com/uploads/burger-png/burger-png-tasty-made-3.png',
         [
-          new Ingrediant('Meat', 1),
-          new Ingrediant('bun', 2)
+          new Ingredient('Meat', 1),
+          new Ingredient('bun', 2)
         ]),
         new Recipe('Burgger Two', 
         'This is simply and teast',
         'https://www.freepnglogos.com/uploads/burger-png/burger-png-tasty-made-3.png',
         [
-          new Ingrediant('Meat', 1),
-          new Ingrediant('bun', 2)
+          new Ingredient('Meat', 1),
+          new Ingredient('bun', 2)
         ])
     
       ];
@@ -34,8 +34,8 @@ export class RecipeService {
       return this.recipes[index]
     }
 
-      addIngrediantsToShoppingList(ingrediants: Ingrediant[]) {
-        this.slService.addIngredients(ingrediants)
+      addIngrediantsToShoppingList(ingredients: Ingredient[]) {
+        this.slService.addIngredients(ingredients)
       }
      
 }

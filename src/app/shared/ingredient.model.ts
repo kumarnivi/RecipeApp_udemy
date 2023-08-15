@@ -8,6 +8,6 @@
 //   }
 // }
 
-export class Ingrediant {
+export class Ingredient {
     constructor (public name:string, public amount: number) { }
 }
