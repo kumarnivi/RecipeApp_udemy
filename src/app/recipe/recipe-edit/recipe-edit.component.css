@@ -1,3 +1,7 @@
 button{
     margin-left: 5px;
 }
+
+textarea.ng-invalid {
+    border: 1px dolid red;
+}

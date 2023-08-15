@@ -2,6 +2,8 @@ import { Component,OnInit } from '@angular/core';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute,Params } from '@angular/router';
 import { RecipeService } from '../recipe.service';
+import { Recipe } from '../recipe.model';
+
 
 @Component({
   selector: 'app-recipe-edit',
@@ -33,6 +35,10 @@ ngOnInit():void {
 // ** Submit the reactive Form Function ** 
 onSubmit(){
   console.log(this.recipeForm)
+  // const newRecipe = new Recipe
+  // if(this.editMode) {
+  //   this.recipeServide.updateRecipe(this.id)
+  // }
 }
 
 onAddIngredient() {
@@ -62,18 +68,18 @@ if (this.editMode) {
   recipeImgPath = recipe.imgPath;
   recipeDesc =recipe.desc;
 
-  // if(recipe['ingrediants']) {
-  //   for ( let ingrediant of recipe.ingrediants) {
-  //     recipeIngredients.push(
-  //       new FormGroup({
-  //         'name': new FormControl(ingrediant.name, Validators.required),
-  //         'amount': new FormControl(ingrediant.amount, Validators.required,Validators.pattern(/^[1-9]+[0-9]*$/) )
-  //       })
-  //     )
-  //   }
-  // }
+//   if (recipe.ingredients) {
+//     for (let ingredient of recipe.ingredients) {
+//       (this.recipeForm.controls['ingredients'] as FormArray).push(
+//         new FormGroup({
+//           'name': new FormControl(ingredient.name),
+//           'amount': new FormControl(ingredient.amount)
+//         })
+//       );
+//     }
+//   }
   
-}
+ }
 
  this.recipeForm = new FormGroup({
   'name': new FormControl(recipeName, Validators.required),

@@ -8,10 +8,9 @@ import {
   OnDestroy,
 } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Subscription, flatMap } from 'rxjs';
 import { Ingredient } from 'src/app/shared/ingredient.model';
 import { ShoppingListService } from 'src/app/shopping-list/shopping-list.service';
-
+import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-shopping-edit',
   templateUrl: './shopping-edit.component.html',
@@ -23,7 +22,7 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
   //  @Output() ingrediantAdded = new EventEmitter<Ingrediant>();
   //  ** we have to import increediant instead of passing object **//
 
-  @ViewChild('f') slForm !: NgForm;
+  @ViewChild('f', {static:false}) slForm!: NgForm;
 
   //  ** we have to store the data using by subscription
   subscription!: Subscription;
