@@ -8,7 +8,7 @@ import {
   OnDestroy,
 } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Subscription } from 'rxjs';
+import { Subscription, flatMap } from 'rxjs';
 import { Ingrediant } from 'src/app/shared/ingrediant.model';
 import { ShoppingListService } from 'src/app/shopping-list/shopping-list.service';
 
@@ -49,8 +49,9 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
       }
     );
   }
+// ** for edit mode **
 
-  onAddItem(form: NgForm) {
+  onSubmit(form: NgForm) {
     const value = form.value;
     const newIngrediant = new Ingrediant(value.name, value.amount);
     if(this.editMode){
@@ -58,11 +59,18 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
     } else {
       this.slService.addIngredient(newIngrediant);
     }
-   
+    this.editMode= false
+   form.reset()
   }
 
   // ** for clean the data **
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
+
+  // ** for clear moode **
+  onClear() {
+    this.slForm.reset();
+    this.editMode = false;
+  } 
 }
