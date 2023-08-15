@@ -118,10 +118,13 @@ recipesChanged = new Subject<Recipe[]>();
       }
        
 
-  //? Adds the provided ingredients to the shopping list
+  //** Adds the provided ingredients to the shopping list
   addIngredientsToShoppingList(ingredients: Ingredient[]) {
     this.slService.addIngredients(ingredients);
   }
-
-
+//  ** delete a single recipe 
+  deleteRecipe(index:number) {
+    this.recipes.splice(index, 1) //** here delete a one value */
+    this.recipesChanged.next(this.recipes.slice())
+  }
 }

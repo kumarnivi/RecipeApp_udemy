@@ -9,7 +9,7 @@ import { ActivatedRoute, Params, Route, Router } from '@angular/router';
 })
 export class RecipeDetailComponent implements OnInit {
   recipe!: Recipe; //? The recipe that is currently being displayed
-  id?: number; //? The id of the currently selected recipe
+  id!: number; //? The id of the currently selected recipe
 
   constructor(
     private recipeService: RecipeService,
@@ -33,6 +33,10 @@ export class RecipeDetailComponent implements OnInit {
   onEditRecipe() {
     this.router.navigate(['edit'], { relativeTo: this.route });
     // this.router.navigate(['../', this.id, 'edit'], {relativeTo: this.route})
+  }
+
+  onDeleteRecipe() {
+    this.recipeService.deleteRecipe(this.id)
   }
 }
 
