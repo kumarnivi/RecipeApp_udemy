@@ -35,6 +35,15 @@ onSubmit(){
   console.log(this.recipeForm)
 }
 
+onAddIngredient() {
+  (<FormArray>this.recipeForm.get('ingredients')).push(
+    new FormGroup({
+      'name': new FormControl(),
+      'amount': new FormControl()
+    })
+  )
+}
+
 // ** create reactive form for create new recipe **
 
 private initForm() {
@@ -74,7 +83,7 @@ if (this.editMode) {
 
 
 get controls() { // a getter!
-  return (<FormArray>this.recipeForm.get('ingredients')).controls;
+   return (<FormArray>this.recipeForm.get('ingredients')).controls;
 }
 
 }
