@@ -61,6 +61,11 @@ onCancel() {
  this.router.navigate(['../'], {relativeTo:this.route}) //** navigate the recipe details page */
 }
 
+
+onDeleteIngredient(index:number) {
+  (<FormArray>this.recipeForm.get('ingredients')).removeAt(index);
+}
+
   //new started
   private initForm() {
     let recipeName: string = '';
