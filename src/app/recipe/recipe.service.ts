@@ -91,6 +91,10 @@ recipesChanged = new Subject<Recipe[]>();
 
   constructor(private slService: ShoppingListService) {}
 
+  setRecipes(recipes :Recipe[]) {
+     this.recipes = recipes;
+     this.recipesChanged.next(this.recipes.slice())  // ** just put a recipes
+  }
   //? Returns a copy of the recipes array
   getRecipes() {
     return this.recipes.slice();
