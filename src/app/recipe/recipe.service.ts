@@ -61,33 +61,35 @@ export class RecipeService {
 recipesChanged = new Subject<Recipe[]>();
 
   //? Array to store predefined recipes
-  private recipes: Recipe[] = [
-    //? Recipe 1: Big Hamburger
-    new Recipe(
-      'Big Hamburger',
-      'Indulge in pure satisfaction with our big hamburger - a culinary masterpiece that boasts succulent, flame-grilled beef enveloped in a fluffy, toasted brioche bun.',
-      'https://img.freepik.com/free-photo/hamburger-isolated-white-background-fresh-burger-fastfood-with-beef-cheese_90220-1329.jpg?t=st=1692149135~exp=1692152735~hmac=7caa51744cc664cddc46e8796829031f304ee2247aeebb094be18f4972d9d384&w=740',
-      [new Ingredient('Buns', 2), new Ingredient('French chees', 3)]
-    ),
-    //? Recipe 2: Pepperoni Pizza
-    new Recipe(
-      'Bun',
-      'Savor the timeless classic of our pepperoni pizza, where a golden, thin crust cradles a tantalizing blend of melted mozzarella and zesty tomato sauce.',
-      'https://www.pngall.com/wp-content/uploads/12/Bun-PNG-Images.png',
-      [new Ingredient('Pepperoni', 20), new Ingredient('Meat', 1)]
-    ),
-    //? Recipe 3: Hot Dog
+  // private recipes: Recipe[] = [
+  //   //? Recipe 1: Big Hamburger
+  //   new Recipe(
+  //     'Big Hamburger',
+  //     'Indulge in pure satisfaction with our big hamburger - a culinary masterpiece that boasts succulent, flame-grilled beef enveloped in a fluffy, toasted brioche bun.',
+  //     'https://img.freepik.com/free-photo/hamburger-isolated-white-background-fresh-burger-fastfood-with-beef-cheese_90220-1329.jpg?t=st=1692149135~exp=1692152735~hmac=7caa51744cc664cddc46e8796829031f304ee2247aeebb094be18f4972d9d384&w=740',
+  //     [new Ingredient('Buns', 2), new Ingredient('French chees', 3)]
+  //   ),
+  //   //? Recipe 2: Pepperoni Pizza
+  //   new Recipe(
+  //     'Bun',
+  //     'Savor the timeless classic of our pepperoni pizza, where a golden, thin crust cradles a tantalizing blend of melted mozzarella and zesty tomato sauce.',
+  //     'https://www.pngall.com/wp-content/uploads/12/Bun-PNG-Images.png',
+  //     [new Ingredient('Pepperoni', 20), new Ingredient('Meat', 1)]
+  //   ),
+  //   //? Recipe 3: Hot Dog
 
-    new Recipe(
-      'Hot Dog',
-      'Hot dogs are prepared commercially by mixing the ingredients (meats, spices, binders and fillers) in vats where rapidly moving blades grind and mix the ingredients',
-      'https://purepng.com/public/uploads/large/purepng.com-hot-dogfood-salad-hotdog-sausage-sandwich-ketchup-9415246184411sj9v.png',
-      [new Ingredient('Sausages', 1), new Ingredient('Sliced Bun', 1)]
-    ),
+  //   new Recipe(
+  //     'Hot Dog',
+  //     'Hot dogs are prepared commercially by mixing the ingredients (meats, spices, binders and fillers) in vats where rapidly moving blades grind and mix the ingredients',
+  //     'https://purepng.com/public/uploads/large/purepng.com-hot-dogfood-salad-hotdog-sausage-sandwich-ketchup-9415246184411sj9v.png',
+  //     [new Ingredient('Sausages', 1), new Ingredient('Sliced Bun', 1)]
+  //   ),
     
 
    
-  ];
+  // ];
+
+  private recipes : Recipe [] = []
 
   constructor(private slService: ShoppingListService) {}
 
