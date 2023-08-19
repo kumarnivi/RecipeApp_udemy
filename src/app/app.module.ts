@@ -49,6 +49,8 @@ import { PlaceholderComponent } from './shared/placeholder/placeholder.component
     ReactiveFormsModule,
   ],
   providers: [ShoppingListService,RecipeService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+
 })
 export class AppModule { }
+
